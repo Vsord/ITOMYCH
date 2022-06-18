@@ -1,17 +1,219 @@
+//////////////////////////////////////////////////////////
+// Variables ////////////
+
+$redColor: brown;
+
+///////////////////////////////////////////////////////////
+
+* {
+    font-family: sans-serif;
+}
+
 body {
-  background: #fff;
+    margin: 0;
+    padding: 0;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover {
+        color: blue;
+    }
 }
 
 .wrapper {
-  .element {
+    max-width: 1837px;
+    background-color: darkgray;
 
-  }
-}
+    .wrapper_img {
+        text-align: center;
 
-.wrapper
+        img {
+            max-width: 320px;
+        }
+    }
 
-.button {
-  & + .button-red {
+    .wrapper_contacts {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: $redColor;
 
-  }
+        .contacts_street {
+
+            p {
+
+                @media (max-width: 500px) {
+                    margin: 0;
+                }
+            }
+        }
+
+        @media (max-width: 500px) {
+            display: block;
+            text-align: center;
+            line-height: 30px;
+        }
+    }
+
+    .wrapper_skills_info {
+        text-align: center;
+
+        ol {
+            padding: 0;
+
+            li {
+                display: inline-block;
+                padding: 10px;
+                margin: 15px;
+                background-color: $redColor;
+                border-radius: 10px;
+
+                @media (max-width: 500px) {
+                    display: block;
+                }
+            }
+
+            @media (max-width: 500px) {
+                width: 50%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .wrapper_links {
+        text-align: center;
+    }
+
+    .wrapper_experience {
+        text-align: center;
+
+        .experience_title {
+            text-align: center;
+        }
+
+        .experience_support {
+            display: inline-block;
+            max-width: 50%;
+            background-color: $redColor;
+            border-radius: 20px;
+            margin: 17px;
+
+            .support_inner {
+                padding: 0px 30px;
+
+                ul {
+                    padding-left: 16px;
+                }
+            }
+
+            @media (max-width: 1217px) {
+                max-width: none;
+            }
+        }
+
+
+        .experience_manager {
+            display: inline-block;
+            background-color: $redColor;
+            border-radius: 20px;
+            margin: 17px;
+
+            .manager_inner {
+                padding: 0px 30px;
+
+                ul {
+                    padding-left: 16px;
+                }
+            }
+        }
+    }
+
+    .wrapper_education {
+
+        .education_title {
+            text-align: center;
+        }
+
+        .education_content {
+            max-width: 35%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: $redColor;
+            border-radius: 20px;
+
+            .content_block {
+                padding: 10px;
+            }
+
+            @media (max-width: 960px) {
+                max-width: 56%;
+            }
+
+            @media (max-width: 800px) {
+                max-width: 67%;
+            }
+
+            @media (max-width: 645px) {
+                max-width: none;
+                margin: 17px;
+            }
+        }
+    }
+
+    .wrapper_feedback {
+        padding: 30px 0px;
+
+        .feedback_inner {
+            max-width: 30%;
+            background-color: $redColor;
+            margin: 0 auto;
+            border-radius: 20px;
+
+            .inner_form {
+                text-align: center;
+                padding: 15px;
+
+                .form_input:nth-child(6) {
+
+                    input {
+                        height: 70px;
+                    }
+                }
+
+                .form_input {
+                    margin-bottom: 20px;
+
+                    input {
+                        height: 30px;
+                        border-radius: 10px;
+                        border: none;
+                    }
+                }
+
+                .form_submit_button {
+                    width: 85px;
+                    height: 35px;
+                    border-radius: 10px;
+                    border: none;
+                    font-size: 18px;
+                }
+            }
+
+            @media (max-width: 960px) {
+                max-width: 35%;
+            }
+
+            @media (max-width: 800px) {
+                max-width: 44%;
+            }
+
+            @media (max-width: 645px) {
+                max-width: none;
+                margin: 17px;
+            }
+        }
+    }
 }
