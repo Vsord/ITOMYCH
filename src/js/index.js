@@ -1,3 +1,4 @@
 import '../styles/main.scss';
 
-console.log('test')
+var a = prompt("What's your name?");
+alert(`Your name is: ${a}`)
