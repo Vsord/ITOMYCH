@@ -31,15 +31,15 @@ console.log(car);
 
 // Первый способ получения копии объекта ///////////////////
 
-let newDrummer = car;
-console.log(newDrummer);
+let objCopy = car;
+console.log(objCopy);
 
 ////////////////////////////////////////////////////////////
 
 // Второй способ получения копии объекта ///////////////////
 
-let a = {...car};
-console.log(a);
+let secondCopy = {...car};
+console.log(secondCopy);
 
 ////////////////////////////////////////////////////////////
 
@@ -53,8 +53,7 @@ console.log(assingment);
 ///////////////////////////////////////////////////////////
 
 // Функция конструктор 1 /////////////////////
-// Кажется мне,что это выглядит ужасно!////////
-
+// Возможен ли такой вариант вообще??? //////
 function SecondCar() {
     let a = {...car};
     this.name = a.name;
@@ -67,8 +66,8 @@ function SecondCar() {
     this.turnOnMusic = a.turnOnMusic;
 };
 
-let g = new SecondCar();
-console.log(g);
+let secondModel = new SecondCar();
+console.log(secondModel);
 
 ///////////////////////////////////////////////
 
@@ -88,20 +87,20 @@ function ThirdCar(
     this.isAbleToRun = isAbleToRun;
 
     this.start = function() {
-        console.log('always use!');
+        console.log('Started');
     };
 
     this.stop = function() {
-        console.log('get the fuck out with your 300bpm!');
+        console.log('Stopped');
     };
 
     this.turnOnMusic = function() {
-        console.log(this.isAbleToPlayFast);
+        console.log(this.isAbleToRun);
     };
 
 };
 
-let f = new ThirdCar(
+let thirdModel = new ThirdCar(
     'Toyota',
     2001,
     true,
@@ -109,5 +108,5 @@ let f = new ThirdCar(
     undefined,
     );
 
-console.log(f);
+console.log(thirdModel);
 
