@@ -3,15 +3,15 @@ import '../styles/main.scss';
 
 // Function 1 ///////////////////////////////
 
-const typeOfValues = (a, b) => a === b ? console.log(true) : console.log(false);
-
-typeOfValues();
+// const typeOfValues = (a, b) => a === b;
+// console.log(typeOfValues());
 
 /////////////////////////////////////////////
 
+
 // Function 2 //////////////////////////////
 
-function a(x, y) {
+function higherValue(x, y) {
     if (x % y == 0) {
         console.log(x);
     } else {
@@ -25,6 +25,6 @@ function a(x, y) {
 
 };
 
-a();
+higherValue(11, 3);
 
 /////////////////////////////////////////////
