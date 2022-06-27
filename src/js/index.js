@@ -3,8 +3,8 @@ import '../styles/main.scss';
 
 // Function 1 ///////////////////////////////
 
-const typeOfValues = (a, b) => a === b;
-console.log(typeOfValues());
+// const typeOfValues = (a, b) => a === b;
+// console.log(typeOfValues());
 
 /////////////////////////////////////////////
 
@@ -15,11 +15,19 @@ function higherValue(x, y) {
     if (x % y == 0) {
         return x
     } else {
-       return (x + y) - (x % y)
+        for (let i = x; i <= y || i >= y; i++) {
+            if (i % y == 0) {
+                console.log(i);
+                break;
+            }
+        }
     }
 
 };
 
-console.log(higherValue());
+higherValue(11, 5);
 
 /////////////////////////////////////////////
+
+
+
