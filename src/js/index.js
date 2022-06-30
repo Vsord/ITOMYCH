@@ -73,13 +73,7 @@ console.log(secondModel);
 
 // Функция конструктор 2 //////////////////////
 
-function ThirdCar(
-    name, 
-    year, 
-    hasKey,
-    hasWheels,
-    isAbleToRun,
-    ) {
+function ThirdCar(name, year, hasKey, hasWheels, isAbleToRun,) {
     this.name = name;
     this.year = year;
     this.hasKey = hasKey;
@@ -100,13 +94,6 @@ function ThirdCar(
 
 };
 
-let thirdModel = new ThirdCar(
-    'Toyota',
-    2001,
-    true,
-    false,
-    undefined,
-    );
-
+let thirdModel = new ThirdCar('Toyota', 2001, true, false, undefined,);
 console.log(thirdModel);
 
