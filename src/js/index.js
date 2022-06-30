@@ -15,17 +15,16 @@ function higherValue(x, y) {
     if (x % y == 0) {
         return x
     } else {
-        for (let i = x; i <= y || i >= y; i++) {
-            if (i % y == 0) {
-                console.log(i);
-                break;
+        for (x; x <= y || x >= y; x++) {
+            if (x % y == 0) {
+                return x;
             }
         }
     }
 
 };
 
-higherValue(11, 5);
+console.log(higherValue(-5, 7));
 
 /////////////////////////////////////////////
 
