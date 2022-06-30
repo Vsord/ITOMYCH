@@ -35,7 +35,7 @@ argumentsSum([78, 99, 100, 101, 401], 99);
 // Function 3 //////////////////////////////////////////////////////
 
 function getUnique(a, b) {
-    let newArray = [];
+    var newArray = [];
     var merged = a.concat(b);
     merged.map((item, index, merged) => {
         if (merged.indexOf(item) == index) {
