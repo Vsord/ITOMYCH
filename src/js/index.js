@@ -1,26 +1,20 @@
 import '../styles/main.scss';
 
 
-var person1 = {fn: 'Lisa', ln: 'Müller', age: 17, size: 175, weight: 67};
-var person2 = {fn: 'Martin', ln: 'Harper', age: 26, email: 'martin.harper@test.de', weight: 102};
-var person3 = {fn: 'Andrew', ln: 'Harper', age: 81, size: 175, weight: 71};
-var person4 = {fn: 'Matthew', ln: 'Müller', age: 19, email: 'matthew@mueller.de'};
+const obj1 = {
+     a: 2.
+};
 
+const obj2 = {
+     a: 2.
+};
 
-function changeObj() {
-     delete this.age
-     delete this.email
- 
-     if (this.size) {
-          this.size += 'cm'
-     }  
-     if (this.weight) {
-          this.weight += 'kg'
-     }
-     console.log(this);
- };
- 
- changeObj.call(person1);
- changeObj.call(person2);
- changeObj.call(person3);
- changeObj.call(person4);
+const obj3 = Object.create(obj1);
+
+function isPrototype(a, b) {
+     return a.isPrototypeOf(b);
+};
+
+console.log(isPrototype(obj1, obj2));
+console.log(isPrototype(obj3, obj1));
+console.log(isPrototype(obj1, obj3)); 
