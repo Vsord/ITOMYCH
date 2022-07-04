@@ -1,99 +1,70 @@
 import '../styles/main.scss';
 
-// Объект /////////////////////////////////
 
-let car = {
-    name: 'Toyota',
-    year: 2001,
-    hasKey: true,
-    hasWheels: false,
-    isAbleToRun: undefined,
+// Функция конструктор //////////////////////
 
-    start() {
-        console.log('Started');
-    },
+// function Car(carBrand, publishYear, hasPowerfullEngine , color, isAbleToRun,) {
+//     this.carBrand = carBrand;
+//     this.publishYear = publishYear;
+//     this.hasPowerfullEngine = hasPowerfullEngine ;
+//     this.color = color
+//     this.isAbleToRun = isAbleToRun;
 
-    stop() {
-        console.log('Stopped');
-    },
+//     this.start = function() {
+//           return `This ${this.carBrand} is able to run: ${this.isAbleToRun}`;
+//     };
 
-    turnOnMusic() {
-        console.log(this.hasWheels);
-    },
-};
+//     this.stop = function() {
+//           return 'Car has been stopped!';
+//     };
 
-console.log(car);
+//     this.changeColor = function() {
+//           this.color = 'red';
+//           return this.color;
+//     };
 
+// };
 
-///////////////////////////////////////////
-
-//////////////////////////////////////////////////////////////
-
-// Первый способ получения копии объекта ///////////////////
-
-let objCopy = car;
-console.log(objCopy);
-
-////////////////////////////////////////////////////////////
-
-// Второй способ получения копии объекта ///////////////////
-
-let secondCopy = {...car};
-console.log(secondCopy);
-
-////////////////////////////////////////////////////////////
+// let newCar = new Car('Toyota', 2001, false, 'green', true,);
+// console.log(newCar);
 
 
-// Третий способ получения копии объекта ///////////////////
 
-let assingment = Object.assign({}, car);
-console.log(assingment);
+/////////////////////////////////////////////////////////
+
+// Находит элемент в html,добавляет ему ширину,высоту и меняет цвет ///
+
+function Component(object) {
+     this.element = document.querySelector(object.selector)
+     this.width = object.width;
+     this.height = object.height;
+     this.color = object.color;
+     
+     this.addWidth = () => {
+         return this.element.style.width = this.width + 'px';
+     };
+
+     this.addHeight = () => {
+          return this.element.style.height = this.height + 'px';
+      };
+
+     this.changeColor = () => {
+         return this.element.style.backgroundColor = this.color;
+     };
+
+ };
+ 
+ let newComponent = new Component({
+     selector: '#block',
+     width: 100,
+     height: 100,
+     color: 'red',
+ });
+
+ console.log(newComponent.addWidth());
+ console.log(newComponent.changeColor());
+ console.log(newComponent.addHeight());
 
 
-///////////////////////////////////////////////////////////
-
-// Функция конструктор 1 /////////////////////
-// Возможен ли такой вариант вообще??? //////
-function SecondCar() {
-    let a = {...car};
-    this.name = a.name;
-    this.year = a.year;
-    this.hasKey = a.hasKey;
-    this.hasWheels = a.hasWheels;
-    this.isAbleToRun = a.isAbleToRun;
-    this.start = a.start;
-    this.stop = a.stop;
-    this.turnOnMusic = a.turnOnMusic;
-};
-
-let secondModel = new SecondCar();
-console.log(secondModel);
-
-///////////////////////////////////////////////
-
-// Функция конструктор 2 //////////////////////
-
-function ThirdCar(name, year, hasKey, hasWheels, isAbleToRun,) {
-    this.name = name;
-    this.year = year;
-    this.hasKey = hasKey;
-    this.hasWheels = hasWheels;
-    this.isAbleToRun = isAbleToRun;
-
-    this.start = function() {
-        console.log('Started');
-    };
-
-    this.stop = function() {
-        console.log('Stopped');
-    };
-
-    this.turnOnMusic = function() {
-        console.log(this.isAbleToRun);
-    };
-
-};
-
-let thirdModel = new ThirdCar('Toyota', 2001, true, false, undefined,);
-console.log(thirdModel);
+/////////////////////////////////////////////////////////////////
 
