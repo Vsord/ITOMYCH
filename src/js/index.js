@@ -23,12 +23,12 @@ function argumentsSum(a, b) {
                 return sum
             }
     }, initialValue);
-    console.log(reducer);
+    return reducer
 };
 
-argumentsSum([1, 2, 3, 4, 5, 6, 7], 2);
-argumentsSum([-10, -11, -3, 1, -4], -3);
-argumentsSum([78, 99, 100, 101, 401], 99);
+console.log(argumentsSum([1, 2, 3, 4, 5, 6, 7], 2));
+console.log(argumentsSum([-10, -11, -3, 1, -4], -3));
+console.log(argumentsSum([78, 99, 100, 101, 401], 99));
 
 ////////////////////////////////////////////////////////////////////
 
@@ -42,13 +42,13 @@ function getUnique(a, b) {
             newArray.push(item)
         }
     });
-    console.log(newArray.sort((a, b) => {
+    return newArray.sort((a, b) => {
         return a - b
-    }));
+    });
 };
 
-getUnique([1, 2, 3], [3, 4, 5]);
-getUnique([-10, 22, 333, 42], [-11, 5, 22, 41, 42]);
+console.log(getUnique([1, 2, 3], [3, 4, 5]));
+console.log(getUnique([-10, 22, 333, 42], [-11, 5, 22, 41, 42]));
 
 ////////////////////////////////////////////////////////////////////
 
