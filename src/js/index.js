@@ -1,38 +1,68 @@
 import '../styles/main.scss';
 
 
-class Calculator {
-    constructor(plusOperation, minusOperation, multiplyOperation, divisionOperation) {
-        this._plusOperation = plusOperation;
-        this._minusOperation = minusOperation;
-        this._multiplyOperation = multiplyOperation;
-        this._divisionOperation = divisionOperation;
+class Component {
+    constructor(options) {
+        this.element = document.getElementById(options.selector);
+    };
+
+    get showID() {
+        return this.element;
+    }
+
+    set changeID(value) {
+        this.element = document.getElementById(value);
     };
 };
 
+class Block extends Component {
 
-class OrdinaryOperations extends Calculator {
-
-    constructor(plusOperation, minusOperation, multiplyOperation, divisionOperation) {
-        super(plusOperation, minusOperation, multiplyOperation, divisionOperation);
+    constructor(options) {
+        super(options)
+        this.element.style.width = options.width + 'px';
+        this.element.style.height = options.height + 'px';
+        this.element.style.backgroundColor = options.color;
+        this.element.style.display = options.visible;
     };
 
-    makePlus(firstNum, secondNum) {
-        return firstNum + secondNum + ` You have used a ${this.plusOperation} operation`;
+    showElem() {
+        return this.element.style.display = 'block';
     };
 
-    makeMinus(firstNum, secondNum) {
-        return firstNum - secondNum + ` You have used a ${this.minusOperation} operation`;
+    hideElem() {
+        return this.element.style.display = 'none';
     };
 
-    makeMultiply(firstNum, secondNum) {
-        return firstNum * secondNum + ` You have used a ${this.multiplyOperation} operation`;
+    changeWidth = (newWidth) => {
+        return this.element.style.width = newWidth + 'px';
     };
 
-    makeDivide(firstNum, secondNum) {
-        return firstNum / secondNum + ` You have used a ${this.divisionOperation} operation`;
+    changeHeight = (newHeight) => {
+        return this.element.style.height = newHeight + 'px';
+     };
+
+    changeColor = (color) => {
+        return this.element.style.backgroundColor = color;
     };
+
 };
 
-let operations = new OrdinaryOperations('+', '-', '*', '/');
-console.log(operations);
+var box = new Block({
+    selector: 'block',
+    width: 100,
+    height: 100,
+    color: 'green',
+    visible: 'none',
+});
+
+
+
+
+
+
+
+
+
+
+
+
