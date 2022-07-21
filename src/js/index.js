@@ -1,59 +1,65 @@
 import '../styles/main.scss';
 
 
-class Component {
+class Car {
     constructor(options) {
-        this.element = document.getElementById(options.selector);
+        this.carBrand = options.carBrand;
+        this.publishYear = options.publishYear;
+        this.hasPowerfullEngine = options.hasPowerfullEngine;
+        this.color = options.color
+        this.isAbleToRun = options.isAbleToRun;
     };
 
-    get showID() {
-        return this.element;
+    get showBrand() {
+        return this.carBrand;
     }
 
-    set changeID(value) {
-        this.element = document.getElementById(value);
+    set changeBrand(value) {
+        this.carBrand = value;
+    };
+
+    start() {
+        return `${this.carBrand} has been started`;
+    };
+
+    stop() {
+        return  `${this.carBrand} has been stopped!`;
+    };
+
+    changeColor(newColor) {
+        if (newColor) {
+            return this.color = newColor
+        } else if (!newColor) {
+            return this.color
+        }
     };
 };
 
-class Block extends Component {
-
+class Engine extends Car {
     constructor(options) {
-        super(options)
-        this.element.style.width = options.width + 'px';
-        this.element.style.height = options.height + 'px';
-        this.element.style.backgroundColor = options.color;
-        this.element.style.display = options.visible;
-    };
+        super(options);
+    }
 
-    showElem() {
-        return this.element.style.display = 'block';
-    };
-
-    hideElem() {
-        return this.element.style.display = 'none';
-    };
-
-    changeWidth = (newWidth) => {
-        return this.element.style.width = newWidth + 'px';
-    };
-
-    changeHeight = (newHeight) => {
-        return this.element.style.height = newHeight + 'px';
-     };
-
-    changeColor = (color) => {
-        return this.element.style.backgroundColor = color;
-    };
-
+    changeEngine(engine) {
+        if (engine) {
+            this.hasPowerfullEngine = engine;
+            return `You have set a new engine: ${engine}`;
+        } else {
+            return this.hasPowerfullEngine;
+        }
+    }
+    
 };
 
-var box = new Block({
-    selector: 'block',
-    width: 100,
-    height: 100,
+var newEngine = new Engine({
+    carBrand: 'Toyota',
+    publishYear: 2001,
+    hasPowerfullEngine: false,
     color: 'green',
-    visible: 'none',
+    isAbleToRun: true,
 });
+console.log(newEngine.stop());
+
 
 
 
